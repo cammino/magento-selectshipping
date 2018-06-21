@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cammino_Selectshipping>
+            <version>0.0.1</version>
+        </Cammino_Selectshipping>
+    </modules>
+    <global>
+        <helpers>
+            <selectshipping>
+                <class>Cammino_Selectshipping_Helper</class>
+            </selectshipping>
+        </helpers>
+        <models>
+            <selectshipping>
+                <class>Cammino_Selectshipping_Model</class>
+            </selectshipping>
+        </models>
+    </global>
+
+    <frontend>
+        <events>
+            <controller_action_postdispatch>
+                <observers>
+                    <selectshipping>
+                        <type>singleton</type>
+                        <class>selectshipping/observer</class>
+                        <method>selectShipping</method>
+                    </selectshipping>
+                </observers>
+            </controller_action_postdispatch>
+        </events>
+    </frontend>
+</config>
